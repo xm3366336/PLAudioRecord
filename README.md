@@ -49,7 +49,7 @@ try {
 	e.printStackTrace();
 }
 ```
-调用**LameUtil.convert()**方法即可。
+调用`LameUtil.convert()`方法即可。
 
 ### 4、图示
  <img src="http://oss.pengl.com/github/PLAudioRecord/1-record.jpg" width="200" height="445" align=center />
@@ -58,6 +58,9 @@ try {
 ### 5、更新记录
 
 > 1.1.0
+
 支持wav转mp3格式。
+
 > 1.0.0
+
 首个版本，支持音频录制，存储为mp3格式；
