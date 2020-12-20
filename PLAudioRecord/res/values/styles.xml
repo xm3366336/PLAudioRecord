@@ -1,0 +1,24 @@
+<resources>
+
+    <style name="AppDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AppDialogTransBg" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/AnimationUpDown</item>
+        <item name="android:buttonStyle">@style/Base.Widget.AppCompat.Button.Borderless</item>
+    </style>
+
+    <style name="AnimationUpDown">
+        <item name="android:activityOpenEnterAnimation">@anim/push_up_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/push_down_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/push_down_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/push_up_out</item>
+    </style>
+
+</resources>

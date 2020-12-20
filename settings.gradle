@@ -1,0 +1,3 @@
+include ':PLAudioRecord'
+include ':app'
+rootProject.name = "PLAudioRecord"

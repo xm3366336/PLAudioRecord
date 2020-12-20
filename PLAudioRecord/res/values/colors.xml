@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--常用色-->
+    <color name="trans">#00ffffff</color>
+    <color name="colorRed">#e51c23</color>
+    <color name="colorGreen">#04be02</color>
+    <color name="colorBlue">#0094ff</color>
+    <color name="colorYellow">#fea14f</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="colorGray">#8a8a8a</color>
+    <color name="colorGrey">#ffe1e1e1</color>
+    <color name="colorBlack">#121212</color>
+    <color name="colorOrange">#ea5c05</color>
+    <color name="colorGray_30">#308a8a8a</color>
+
+    <color name="text_333">#ff3c3c3c</color>
+    <color name="text_666">#ff737373</color>
+    <color name="text_999">#ff999999</color>
+    <color name="text_aaa">#ffaaaaaa</color>
+    <color name="text_ccc">#ffcccccc</color>
+    <color name="divider">#D6D6D6</color>
+    <color name="colorPress">#E6E6E6</color>
+    <color name="colorPressTrans">#30E6E6E6</color>
+
+</resources>

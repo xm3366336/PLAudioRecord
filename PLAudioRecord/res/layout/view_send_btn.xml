@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true">
+
+    <RelativeLayout
+        android:id="@+id/return_layout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_oval_press">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="70dip"
+            android:layout_height="70dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_oval_grey"
+            android:padding="16dip"
+            android:src="@drawable/ic_baseline_settings_backup_restore_24"
+            android:tint="@color/colorWhite" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/select_layout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/bg_oval_press">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="70dip"
+            android:layout_height="70dip"
+            android:layout_centerInParent="true"
+            android:background="@drawable/btn_oval_orange"
+            android:padding="16dip"
+            android:src="@drawable/ic_baseline_check_24"
+            android:tint="@color/colorWhite" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
