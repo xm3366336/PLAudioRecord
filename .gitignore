@@ -94,4 +94,5 @@ lint/tmp/
 # settings.gradle
 */get*Version.json
 
-release/
+# release/
+app/release/output-metadata.json

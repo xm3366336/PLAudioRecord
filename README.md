@@ -1,4 +1,6 @@
 # PLAudioRecord
+[![](https://jitpack.io/v/xm3366336/PLAudioRecord.svg)](https://jitpack.io/#xm3366336/PLAudioRecord)
+
 音频录制工具，主要两个功能点：
  * 1、直接录制生成mp3格式的音频；
  * 2、将wav格式的音频转换成mp3格式；
@@ -16,7 +18,7 @@ so....只要简单的调用dialog，本库直接输出mp3格式音频，如有wa
 
 > 1、引入
 ```
-implementation 'com.pengl:PLAudioRecord:1.1.0'
+implementation 'com.github.xm3366336:PLAudioRecord:1.1.0'
 ```
 
 > 2、调起录音窗口
@@ -29,6 +31,7 @@ dialog.show();
 ```
 录音完毕后，根据OnRecordFixedListener监听完成事件。生成的mp3音频存储于沙盒的 files/Music/PLAudioRecord/ 目录下。
 这样就可以了。如果你现有项目不好改动，可以继续往下看，将现在的wav转成mp3
+注意：Demo中没有申请录音权限，请自行处理。
 
 > 3、已有wav转成mp3格式
 ```
