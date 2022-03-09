@@ -45,14 +45,13 @@ android {
             jniLibs.srcDirs = ['libs']
         }
     }
+    packagingOptions {
+        jniLibs {
+            pickFirsts += ['lib/armeabi-v7a/libmp3lame.so', 'lib/arm64-v8a/libmp3lame.so', 'lib/armeabi-v7a/libmp3recorder-lib.so', 'lib/arm64-v8a/libmp3recorder-lib.so']
+        }
+    }
 
     // 避免重复导入库
-    packagingOptions {
-        pickFirst 'lib/armeabi-v7a/libmp3lame.so'
-        pickFirst 'lib/arm64-v8a/libmp3lame.so'
-        pickFirst 'lib/armeabi-v7a/libmp3recorder-lib.so'
-        pickFirst 'lib/arm64-v8a/libmp3recorder-lib.so'
-    }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
@@ -63,5 +62,5 @@ android {
 dependencies {
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
 }

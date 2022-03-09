@@ -9,12 +9,12 @@
     android:keepScreenOn="true"
     android:orientation="vertical">
 
-    <ImageButton
+    <androidx.appcompat.widget.AppCompatImageButton
         android:id="@+id/btn_close"
         android:layout_width="48dip"
         android:layout_height="48dip"
         android:background="@drawable/list_selector"
-        android:contentDescription="关闭"
+        android:padding="12dip"
         android:src="@drawable/ic_baseline_close_24"
         android:tint="@color/text_666"
         app:layout_constraintEnd_toEndOf="parent"
