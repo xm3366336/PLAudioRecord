@@ -1,7 +1,5 @@
-plugins {
-    id 'com.android.library'
-    id 'maven-publish'
-}
+apply plugin: 'com.android.library'
+apply plugin: 'maven-publish'
 
 group = 'com.github.xm3366336'
 
@@ -73,9 +71,6 @@ afterEvaluate {
         publications {
             release(MavenPublication) {
                 from components.release
-                groupId = 'com.github.xm3366336'
-                artifactId = 'PLAudioRecord'
-                version = '1.1.1'
             }
         }
     }
