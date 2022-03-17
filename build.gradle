@@ -15,8 +15,8 @@ ext {
     buildToolsVersion = "31.0.0"
     minSdkVersion = 21
     targetSdkVersion = 31
-    versionCode = 2012141
-    versionName = "1.1.0"
+    versionCode = 2203171
+    versionName = "1.1.1"
 }
 
 allprojects {

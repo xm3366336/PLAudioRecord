@@ -6,9 +6,9 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 
@@ -108,7 +108,6 @@ public class SpectrumView extends View {
                     for (int j = 0; j < pointers.size(); j++) {
                         //利用正弦有规律的获取0~1的数。
                         float rate = (float) Math.abs(Math.sin(i + j));
-                        Log.d(TAG, "run: i:" + i);
                         //rate 乘以 可绘制高度，来改变每个指针的高度
                         pointers.get(j).setHeight((basePointY - getPaddingTop()) * rate);
                     }
@@ -127,29 +126,23 @@ public class SpectrumView extends View {
 
     /**
      * 在onLayout中做一些，宽高方面的初始化
-     *
-     * @param changed
-     * @param left
-     * @param top
-     * @param right
-     * @param bottom
      */
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        //获取逻辑原点的，也就是画布左下角的坐标。这里减去了paddingBottom的距离
+        // 获取逻辑原点的，也就是画布左下角的坐标。这里减去了paddingBottom的距离
         basePointY = getHeight() - getPaddingBottom();
         Random random = new Random();
-        if (pointers != null)
-            pointers.clear();
+        if (null == pointers)
+            pointers = new ArrayList<>();
+        pointers.clear();
         for (int i = 0; i < pointerNum; i++) {
-            //创建指针对象，利用0~1的随机数 乘以 可绘制区域的高度。作为每个指针的初始高度。
+            // 创建指针对象，利用0~1的随机数 乘以 可绘制区域的高度。作为每个指针的初始高度。
             pointers.add(new Pointer((float) (0.1 * (random.nextInt(10) + 1) * (getHeight() - getPaddingBottom() - getPaddingTop()))));
         }
-        //计算每个指针之间的间隔  总宽度 - 左右两边的padding - 所有指针占去的宽度  然后再除以间隔的数量
+        // 计算每个指针之间的间隔  总宽度 - 左右两边的padding - 所有指针占去的宽度  然后再除以间隔的数量
         pointerPadding = (getWidth() - getPaddingLeft() - getPaddingRight() - pointerWidth * pointerNum) / (pointerNum - 1);
     }
-
 
     /**
      * 开始绘画
@@ -192,6 +185,7 @@ public class SpectrumView extends View {
         private final WeakReference<SpectrumView> view;
 
         MyHandler(SpectrumView mSpectrumView) {
+            super(Looper.getMainLooper());
             view = new WeakReference<>(mSpectrumView);
         }
 
@@ -209,7 +203,7 @@ public class SpectrumView extends View {
     /**
      * 指针类
      */
-    public class Pointer {
+    public static class Pointer {
         private float height;
 
         Pointer(float height) {

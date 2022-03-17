@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.util.AttributeSet;
 import android.util.TypedValue;
@@ -95,6 +96,7 @@ public class RecorderView extends LinearLayout {
         private final WeakReference<RecorderView> view;
 
         MyHandler(RecorderView mRecorderView) {
+            super(Looper.getMainLooper());
             view = new WeakReference<>(mRecorderView);
         }
 

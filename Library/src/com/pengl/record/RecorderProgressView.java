@@ -32,10 +32,13 @@ class RecorderProgressView extends View {
     private static final float MIDDLE_WAVE_RADIUS_PERCENT = 0.9f; //第二个圆出现时，第一个圆的半径百分比
     private static final float WAVE_WIDTH = 5f; //波纹圆环宽度
 
-    //圆环颜色
-    private static int[] doughnutColors = new int[]{Color.argb(MAX_ALPHA, RED, GREEN, BLUE), Color.argb(MIN_ALPHA, RED, GREEN, BLUE), Color.argb(MIN_ALPHA, RED, GREEN, BLUE)};
+    // 圆环颜色
+    private static final int[] doughnutColors = new int[]{
+            Color.argb(MAX_ALPHA, RED, GREEN, BLUE),
+            Color.argb(MIN_ALPHA, RED, GREEN, BLUE),
+            Color.argb(MIN_ALPHA, RED, GREEN, BLUE)};
 
-    private Paint paint = new Paint(); //画笔
+    private final Paint paint = new Paint(); //画笔
     private SweepGradient mSweepGradient;
     private Bitmap bitmapMic;
 
@@ -46,7 +49,7 @@ class RecorderProgressView extends View {
     private float secondWaveRadius;
 
     private boolean isAnimationStart;
-    private ExecutorService esAnimation = Executors.newSingleThreadExecutor();
+    private final ExecutorService esAnimation = Executors.newSingleThreadExecutor();
     private Future ftAnimation;
 
     public RecorderProgressView(Context context) {
@@ -113,7 +116,7 @@ class RecorderProgressView extends View {
         // 转起来
         canvas.rotate(-currentAngle, 0, 0);
         // 画渐变圆环
-        float doughnutWidth = radius * doughnutWidthPercent;//圆环宽度
+        float doughnutWidth = radius * doughnutWidthPercent;// 圆环宽度
 
         initPaint();
         paint.setStrokeWidth(doughnutWidth);
@@ -121,7 +124,11 @@ class RecorderProgressView extends View {
         paint.setShader(mSweepGradient);
 
         // 圆环外接矩形
-        @SuppressLint("DrawAllocation") RectF rectF = new RectF(-radius * doughnutRadiusPercent, -radius * doughnutRadiusPercent, radius * doughnutRadiusPercent, radius * doughnutRadiusPercent);
+        @SuppressLint("DrawAllocation") RectF rectF = new RectF(
+                -radius * doughnutRadiusPercent,
+                -radius * doughnutRadiusPercent,
+                radius * doughnutRadiusPercent,
+                radius * doughnutRadiusPercent);
         canvas.drawArc(rectF, 0, 360, false, paint);
 
         // 画旋转头部圆
@@ -139,7 +146,7 @@ class RecorderProgressView extends View {
         initPaint();
         // 画麦克风
         if (bitmapMic != null) {
-            canvas.drawBitmap(bitmapMic, -bitmapMic.getWidth() / 2, -bitmapMic.getHeight() / 2, paint);
+            canvas.drawBitmap(bitmapMic, -bitmapMic.getWidth() / 2f, -bitmapMic.getHeight() / 2f, paint);
         }
         // 实现类似水波涟漪效果
         initPaint();
@@ -213,7 +220,7 @@ class RecorderProgressView extends View {
         return result;
     }
 
-    private Runnable animationRunnable = new Runnable() {
+    private final Runnable animationRunnable = new Runnable() {
         @Override
         public void run() {
             while (isAnimationStart) {
