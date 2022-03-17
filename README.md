@@ -18,7 +18,7 @@ so....只要简单的调用dialog，本库直接输出mp3格式音频，如有wa
 
 > 1、引入
 ```
-implementation 'com.github.xm3366336:PLAudioRecord:1.1.0'
+implementation 'com.github.xm3366336:PLAudioRecord:1.1.1'
 ```
 
 > 2、调起录音窗口
@@ -56,10 +56,13 @@ try {
 
 ## 4、图示
 
- <img src="http://oss.pengl.com/github/PLAudioRecord/1-record.jpg" width="300" height="667" align=center />
- <img src="http://oss.pengl.com/github/PLAudioRecord/2-fixed.jpg" width="300" height="667" align=center />
+ <img src="https://github.com/xm3366336/PLAudioRecord/blob/main/app/release/screenshot.jpg" width="300" height="667" align=center />
 
 ## 5、更新记录
+
+> 1.1.1
+
+Demo加入申请权限，去除不必要的日志打印
 
 > 1.1.0
 
