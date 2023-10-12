@@ -8,13 +8,11 @@ import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.pengl.record.OnRecordFixedListener;
 import com.pengl.record.PLDialogRecord;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         tv_filepath = findViewById(R.id.tv_filepath);
+        ((TextView) findViewById(R.id.tv_copyright)).setText(getString(R.string.version, BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, getString(R.string.github_url)));
     }
 
     public void onClickRecord(View view) {

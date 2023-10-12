@@ -15,4 +15,7 @@
         \n} catch (IOException e) {
             \n\t\te.printStackTrace();
         \n}</string>
+
+    <string name="version">v%1$s\nBuild:%2$d\n%3$s</string>
+    <string name="github_url">https://github.com/xm3366336/PLAudioRecord</string>
 </resources>

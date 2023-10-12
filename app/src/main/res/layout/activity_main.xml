@@ -42,6 +42,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_filepath" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/CardViewCode"
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_margin="16dip"
@@ -58,5 +59,18 @@
             android:textColor="@color/text_666"
             android:textSize="@dimen/text_size_10" />
     </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_copyright"
+        android:layout_width="0dip"
+        android:layout_height="wrap_content"
+        android:paddingTop="32dip"
+        android:paddingBottom="32dip"
+        android:textColor="@color/text_666"
+        android:textSize="@dimen/text_size_12"
+        app:layout_constraintEnd_toEndOf="@id/CardViewCode"
+        app:layout_constraintStart_toStartOf="@id/CardViewCode"
+        app:layout_constraintTop_toBottomOf="@id/CardViewCode"
+        tools:text="@string/version" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
