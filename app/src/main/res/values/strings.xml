@@ -8,9 +8,9 @@
             \n\t\tif (reader.openFile(filePathWav)) {
                 \n\t\t\t\tWavFileHeader header = reader.getmWavFileHeader();
                 \n\t\t\t\tLameUtil.convert(filePathWav, filePathMp3, header.getmSampleRate());
-                \n\t\t\t\tLog.i("wav", "SampleRate：" + header.getmSampleRate());
-                \n\t\t\t\tLog.i("wav", "NumChannel：" + header.getmNumChannel());
-                \n\t\t\t\tLog.i("wav", "ByteRate：" + header.getmByteRate());
+                \n\t\t\t\tLog.i(\"wav\", \"SampleRate：\" + header.getmSampleRate());
+                \n\t\t\t\tLog.i(\"wav\", \"NumChannel：\" + header.getmNumChannel());
+                \n\t\t\t\tLog.i(\"wav\", \"ByteRate：\" + header.getmByteRate());
             \n\t\t}
         \n} catch (IOException e) {
             \n\t\te.printStackTrace();
